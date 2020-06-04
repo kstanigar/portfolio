@@ -3,7 +3,7 @@
   margin: 0 0 0 auto;
 }
 
-.main-head nav {
+nav {
   @include flex(space-between, center, row);
   min-height: 10vh;
   width: 60%;
@@ -28,24 +28,29 @@
   flex-wrap: wrap;
   @include flex(space-between, center, row);
   h2 {
-    font-size: 8rem;
+    font-size: $bigtext;
     padding-top: 2rem;
-    background: $gradient;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-  }
-  h3 {
-    font-size: 6rem;
-    padding: 2rem 0rem;
-  }
-  p {
-    padding-top: 2rem;
-    color: $gray-text;
+    color: #2384ad;
+    text-shadow: 2px 2px 5px rgba(20, 20, 20, 0.5),
+      4px 4px 10px rgba(20, 20, 20, 0.1);
+    // background: $gradient;
+    // background-clip: text;
+    // -webkit-text-fill-color: transparent;
+    // display: inline-block;
   }
 }
+h3 {
+  font-size: $header3;
+  padding: 2rem 0rem;
+  color: $gray-text;
+}
 
-.spash {
+p {
+  padding-top: 2rem;
+  color: $gray-text;
+}
+
+.splash {
   position: absolute;
   top: 0%;
   right: 0%;
@@ -67,10 +72,54 @@
   border-radius: 2rem;
 }
 
-.intro-text {
-  flex: 1 1 60rem;
-}
-
+.intro-text,
 .intro-images {
   flex: 1 1 40rem;
+}
+
+#plant-left {
+  animation: plant 1.5s ease infinite alternate;
+}
+
+#plant-right {
+  animation: plant 1.5s ease-in-out infinite alternate 0.5s;
+}
+
+#me {
+  animation: me 1s ease infinite alternate;
+  transform-origin: bottom;
+}
+
+#clock-arrow {
+  animation: clock 10s infinite linear;
+  transform-box: fill-box;
+  transform-origin: bottom;
+}
+
+@keyframes me {
+  from {
+    transform: rotateZ(-1deg);
+  }
+
+  to {
+    transform: rotateZ(2deg);
+  }
+}
+
+@keyframes plant {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-30%);
+  }
+}
+
+@keyframes clock {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
 }
