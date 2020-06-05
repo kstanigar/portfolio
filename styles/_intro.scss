@@ -82,36 +82,71 @@ p {
 }
 
 #plant-right {
-  animation: plant 1.5s ease-in-out infinite alternate 0.5s;
+  animation: plant 1.5s ease-in-out infinite alternate 1.5s;
 }
 
+// !Sway Animation
+// #me {
+//   animation: me 2s ease infinite alternate;
+//   transform-origin: bottom;
+// }
+
 #me {
-  animation: me 1s ease infinite alternate;
+  animation: type 0.77s ease-in-out infinite alternate-reverse;
   transform-origin: bottom;
 }
 
+#me:after {
+  animation-delay: 10s;
+}
+
 #clock-arrow {
-  animation: clock 10s infinite linear;
+  animation: clock 2s infinite linear;
   transform-box: fill-box;
   transform-origin: bottom;
 }
 
-@keyframes me {
-  from {
-    transform: rotateZ(-1deg);
+@keyframes type {
+  0% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  17% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  20% {
+    transform: translate3d(0px, 4px, 0px);
   }
 
-  to {
-    transform: rotateZ(2deg);
+  30% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  73% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  80% {
+    transform: translate3d(0px, 4px, 0px);
+  }
+  100% {
+    transform: translate3d(0%, 0%, 0deg);
   }
 }
+// ! Sway Animation
+// @keyframes me {
+//   from {
+//     transform: rotateZ(-1deg);
+//   }
+
+//   to {
+//     transform: rotateZ(1deg);
+//   }
+// }
 
 @keyframes plant {
   from {
     transform: translateY(0%);
   }
   to {
-    transform: translateY(-30%);
+    transform: translateY(-5%);
   }
 }
 
