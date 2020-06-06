@@ -12,7 +12,7 @@ $bigtext: 8rem;
 // $text: calc(2.5rem + 1vw);
 // $bigtext: calc(6rem + 1vw);
 $gradient: linear-gradient(to right, #38d39f, #38a4d3);
-$background-color: #154353;
+$background-color: #457788;
 $gray-text: #353535;
 
 @mixin flex($justify, $align, $direction) {
@@ -21,8 +21,12 @@ $gray-text: #353535;
   align-items: $align;
   flex-direction: $direction;
 }
+
 @import "global";
 @import "intro";
+@import "projects";
+@import "contact";
+@import "footer";
 
 @media screen and (max-width: 1332px) {
   html {
@@ -41,6 +45,7 @@ $gray-text: #353535;
   }
 }
 
+// * Mobile version
 @media screen and (max-width: 754px) {
   html {
     font-size: 45%;
@@ -48,6 +53,7 @@ $gray-text: #353535;
   svg {
     height: 60%;
   }
+
   .main-head {
     width: 100%;
   }
@@ -60,6 +66,9 @@ $gray-text: #353535;
     ul {
       flex: 1 1 60rem;
       margin: 2rem 0rem;
+    }
+    img {
+      width: 4rem;
     }
   }
   .intro-text {
@@ -76,5 +85,27 @@ $gray-text: #353535;
     a {
       margin: 2rem;
     }
+  }
+
+  .travelly,
+  .elena {
+    flex: 1 1 50rem;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 526px) {
+  form {
+    padding: 0;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .intro svg {
+    display: none;
   }
 }
